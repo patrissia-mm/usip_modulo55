@@ -1,0 +1,21 @@
+<h1>Categorías</h1>
+
+<form action="{% url 'categoria' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Categoría</legend>
+        {% if error_message %}
+        <p class="error"><strong>{{ error_message }}</strong></p>
+        {% endif %}
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre"/>
+        <br>
+        <input type="submit" value="Registrar">
+    </fieldset>
+</form>
+
+<ul>
+    {% for categoria in categorias %}
+    <li>{{ categoria }}</li>
+    {% endfor %}
+</ul>
