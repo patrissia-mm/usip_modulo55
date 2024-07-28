@@ -50,12 +50,12 @@ def productoFormView(request):
 
     return render(request, "form_productos.html", {"form": form})
 
-
+#Model View SET
 class CategoriasViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
 
-
+#Generic Api View
 class CategoriaCreateView(generics.CreateAPIView, generics.ListAPIView):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
